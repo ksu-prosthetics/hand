@@ -1,35 +1,20 @@
 #include <Servo.h>
 
-#define button 30
-#define servoPin 36
+#define sensor A0
+#define servoPin 2
 
 Servo servo;
 int micro;
-bool cw;
-
 
 void setup(){
-    servo.attach(36);
-    pinMode(button, INPUT);
+    servo.attach(servoPin);
+    pinMode(sensor, INPUT);
     micro = 0;
-    cw = false;
+    servo.writeMicroseconds(micro);
 }
 
 void loop(){
-    if (micro < 2400 && cw){
-        micro += 100;
-    }
-    if (micro >= 2400 && cw){
-        cw = !cw;
-        micro -= 100;
-    }
-    else if (micro > 0 && !cw){
-        micro -= 100;
-    }
-    else if (micro <= 0 && !cw){
-        cw = !cw;
-        micro += 100;
-    }
+    micro = analogRead(sensor);
     servo.writeMicroseconds(micro);
     delay(200);
 }
