@@ -98,6 +98,9 @@ void loop()
       readingsAvg[i] = prev[i+1];
     }
     
+    /*
+    Slidng avg
+    */
     readingsAvg[NumReadings - 1] = sensor1;
     for(i = 0; i < NumReadings; i++){
       sum = sum + readingsAvg[i];
