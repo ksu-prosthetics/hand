@@ -1,3 +1,9 @@
+/*
+This code allows reading from the mussles in the body wich becomes very noisy.
+To read the data it use servopins to read the input 
+it will transfer the pins to the global servo variables, and after that it will calculate the micros. 
+
+*/
 #include <Servo.h>
 
 /*
