@@ -58,7 +58,7 @@ void setup(){
     servo3.writeMicroseconds(micro3);
     servo4.writeMicroseconds(micro4);
     servo5.writeMicroseconds(micro5);
-    
+  
     Serial.begin(9600);
 }
 
@@ -76,6 +76,17 @@ void setup(){
  
 void loop() 
 {
+
+    servo3.write(180);
+    delay(1000);
+    servo3.write(90);
+    delay(1000);
+    servo3.write(45);
+    delay(1000);
+    servo3.write(360);
+    delay(1000);
+    servo3.write(0);   
+  
   //reads in the current time and data
   T = millis();
   raw = analogRead(A0);
@@ -110,7 +121,7 @@ void loop()
   
   //moves the servo by one degree in the given direction
   if(angle < 180 || angle > 0){
-    servo2.write(angle);
+    servo3.write(angle);
   }
 
   //ensures a 5ms time delay between main loops
