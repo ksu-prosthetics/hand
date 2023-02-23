@@ -1,12 +1,12 @@
 #include <Servo.h>
 
 #define sensor1 A0
-#define sensor2 A1
+#define sensor2 2 
 #define sensor3 A2
 #define sensor4 A3
 #define sensor5 A4
 
-#define servo1Pin 2
+#define servo1Pin A1
 #define servo2Pin 3
 #define servo3Pin 4
 #define servo4Pin 5
