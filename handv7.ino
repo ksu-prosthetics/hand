@@ -77,15 +77,15 @@ void setup(){
 void loop() 
 {
 
-    servo3.write(180);
+    servo1.write(180);
     delay(1000);
-    servo3.write(90);
+    servo1.write(90);
     delay(1000);
-    servo3.write(45);
+    servo1.write(45);
     delay(1000);
-    servo3.write(360);
+    servo1.write(360);
     delay(1000);
-    servo3.write(0);   
+    servo1.write(0);   
   
   //reads in the current time and data
   T = millis();
@@ -121,7 +121,7 @@ void loop()
   
   //moves the servo by one degree in the given direction
   if(angle < 180 || angle > 0){
-    servo3.write(angle);
+    servo1.write(angle);
   }
 
   //ensures a 5ms time delay between main loops
