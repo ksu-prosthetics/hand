@@ -12,8 +12,6 @@
 #define servo4Pin 5
 #define servo5Pin 6
 
-const int ledPin = LED_BUILTIN;  // pin to use for the LED
-
 Servo servo1;
 Servo servo2;
 Servo servo3;
@@ -25,11 +23,15 @@ int micro2;
 int micro3;
 int micro4;
 int micro5;
+
+
 const int NumReadings = 3;
 int temp[NumReadings] = { 0 };
 int readingsAvg[NumReadings] = { 0 };
 int sum = 0;
 int flexed = 0;
+
+//lowe lim and upper lim are experimentally acquired
 int lowerLim = 50;
 int upperLim = 150;
 int raw = 0;
@@ -121,7 +123,7 @@ void loop() {
   else if(angle < 1){
     angle = 1;
   }
-  Serial.println(angle);
+  Serial.println(out);
   servo1.write(angle);
   //moves the servo by one degree in the given directione delay between main loops
   while (millis() - T < 5) {}
